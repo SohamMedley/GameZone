@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Ball - GameZo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/games.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad logo-icon"></i>
+                <h1>GameZo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Games</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <h2>Crazy Ball</h2>
+                <p>Guide a bouncing ball through endless obstacles</p>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <div class="container">
+                <div class="game-container">
+                    <canvas id="gameCanvas"></canvas>
+                    <div class="game-controls">
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-star"></i>
+                                <span>Score: </span>
+                                <span id="score">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span>Lives: </span>
+                                <span id="lives">3</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Level: </span>
+                                <span id="level">1</span>
+                            </div>
+                        </div>
+                        <button id="startButton" class="btn">Start Game</button>
+                        <div class="customize-section">
+                            <h3>Customize</h3>
+                            <div class="color-options">
+                                <label>Ball Color:</label>
+                                <input type="color" id="ballColor" value="#7c3aed">
+                            </div>
+                            <div class="color-options">
+                                <label>Background:</label>
+                                <select id="backgroundTheme">
+                                    <option value="default">Default</option>
+                                    <option value="space">Space</option>
+                                    <option value="underwater">Underwater</option>
+                                    <option value="forest">Forest</option>
+                                    <option value="lava">Lava</option>
+                                </select>
+                            </div>
+                            <div class="color-options">
+                                <label>Game Mode:</label>
+                                <select id="gameMode">
+                                    <option value="classic">Classic</option>
+                                    <option value="extreme">Extreme</option>
+                                    <option value="zen">Zen</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-instructions">
+            <div class="container">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Use arrow keys or WASD to control the ball</li>
+                    <li>Avoid obstacles and collect points</li>
+                    <li>Collect power-ups for special abilities:
+                        <ul>
+                            <li><span class="power-shield">Shield</span> - Protects from obstacles</li>
+                            <li><span class="power-magnet">Magnet</span> - Attracts collectibles</li>
+                            <li><span class="power-slow">Slow Time</span> - Slows down obstacles</li>
+                            <li><span class="power-life">Extra Life</span> - Gives you an additional life</li>
+                        </ul>
+                    </li>
+                    <li>The game gets faster as your level increases</li>
+                    <li>Try different game modes for varied difficulty</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>GameZo</h2>
+                    <p>The ultimate online gaming platform</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="{{ url_for('index') }}">Home</a>
+                    <a href="{{ url_for('about') }}">About Us</a>
+                    <a href="{{ url_for('contact') }}">Contact Us</a>
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 GameZo. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/crazyball.js') }}"></script>
+</body>
+</html>

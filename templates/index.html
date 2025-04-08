@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZo - Play Fun Games Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad logo-icon"></i>
+                <h1>GameZo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Games</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Play Amazing Games Online</h2>
+                <p>Enjoy our collection of free, fun, and interactive games</p>
+                <a href="#games" class="hero-btn">Explore Games</a>
+            </div>
+        </section>
+
+        <section class="games" id="games">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Games</h2>
+                    <p>Choose from our collection of fun and engaging games</p>
+                </div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-icon float-animation">
+                            <img src="{{ url_for('static', filename='images/crazyball.png') }}" alt="Crazy Ball">
+                        </div>
+                        <h3>Crazy Ball</h3>
+                        <p>Guide a bouncing ball through endless obstacles. Collect power-ups, avoid traps, and customize your game for a unique experience every time you play!</p>
+                        <a href="{{ url_for('crazyball') }}" class="btn">Play Now</a>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-icon float-animation">
+                            <img src="{{ url_for('static', filename='images/tictactoe.png') }}" alt="Tic Tac Toe">
+                        </div>
+                        <h3>Tic Tac Toe</h3>
+                        <p>Enjoy the classic game of Tic Tac Toe, challenge your friends, or practice against AI. Simple yet strategic, this game never gets old.</p>
+                        <a href="{{ url_for('tictactoe') }}" class="btn">Play Now</a>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-icon float-animation">
+                            <img src="{{ url_for('static', filename='images/piano.png') }}" alt="My Piano">
+                        </div>
+                        <h3>My Piano</h3>
+                        <p>A fun, responsive virtual piano for all devices. Play, explore, and enjoy music anytime, anywhere!</p>
+                        <a href="{{ url_for('piano') }}" class="btn">Play Now</a>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-icon float-animation">
+                            <img src="{{ url_for('static', filename='images/memory.png') }}" alt="Memory Match">
+                        </div>
+                        <h3>Memory Match</h3>
+                        <p>Test your memory skills with this classic card matching game. Find all the matching pairs in the shortest time possible!</p>
+                        <a href="{{ url_for('memory') }}" class="btn">Play Now</a>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-icon float-animation">
+                            <img src="{{ url_for('static', filename='images/snake.png') }}" alt="Snake Game">
+                        </div>
+                        <h3>Snake Game</h3>
+                        <p>Control a hungry snake as it grows longer by eating food. Avoid hitting walls and your own tail in this addictive classic!</p>
+                        <a href="{{ url_for('snake') }}" class="btn">Play Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose GameZo</h2>
+                    <p>We offer the best gaming experience online</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Fast & Responsive</h3>
+                        <p>Our games load quickly and work smoothly on all devices</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Customizable</h3>
+                        <p>Personalize your gaming experience with various options</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Competitive</h3>
+                        <p>Challenge yourself and others with our scoring system</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Safe & Secure</h3>
+                        <p>Play with confidence on our secure platform</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>GameZo</h2>
+                    <p>The ultimate online gaming platform</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="{{ url_for('index') }}">Home</a>
+                    <a href="{{ url_for('about') }}">About Us</a>
+                    <a href="{{ url_for('contact') }}">Contact Us</a>
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 GameZo. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

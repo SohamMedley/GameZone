@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - GameZo Clone</title>
+  <link rel="stylesheet" href="static/css/main.css">
+  <!-- Optionally include font icons if needed for form icons or social links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="static/images/logo.png" alt="GameZo Logo" class="logo-icon">
+        <h1>GameZo Clone</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Contact Us</h2>
+      <p>
+        Got any questions or feedback? We'd love to hear from you. Reach out to us and we'll get back to you shortly.
+      </p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+      <div class="container">
+        <form action="/send-message" method="POST">
+          <div>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <br>
+          <div>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <br>
+          <div>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <br>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <h2>GameZo Clone</h2>
+        <p>Reimagined classic gaming for modern players.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p class="copyright">&copy; 2025 GameZo Clone. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

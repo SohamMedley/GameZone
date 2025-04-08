@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - GameZo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/games.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad logo-icon"></i>
+                <h1>GameZo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Games</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <h2>Snake Game</h2>
+                <p>Control a hungry snake and eat as much food as possible</p>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <div class="container">
+                <div class="snake-game-container">
+                    <div class="snake-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-apple-whole"></i>
+                            <span>Score: </span>
+                            <span id="score">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>High Score: </span>
+                            <span id="highScore">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-ruler"></i>
+                            <span>Length: </span>
+                            <span id="length">3</span>
+                        </div>
+                    </div>
+                    
+                    <canvas id="snakeCanvas"></canvas>
+                    
+                    <div class="snake-controls">
+                        <button id="startButton" class="btn">Start Game</button>
+                        <div class="game-options">
+                            <div class="option-item">
+                                <label for="gameSpeed">Speed:</label>
+                                <select id="gameSpeed">
+                                    <option value="slow">Slow</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="fast">Fast</option>
+                                    <option value="insane">Insane</option>
+                                </select>
+                            </div>
+                            <div class="option-item">
+                                <label for="gameMode">Mode:</label>
+                                <select id="gameMode">
+                                    <option value="classic">Classic</option>
+                                    <option value="noWalls">No Walls</option>
+                                    <option value="obstacles">Obstacles</option>
+                                    <option value="portal">Portal</option>
+                                </select>
+                            </div>
+                            <div class="option-item">
+                                <label for="snakeColor">Snake Color:</label>
+                                <input type="color" id="snakeColor" value="#7c3aed">
+                            </div>
+                        </div>
+                        
+                        <div class="mobile-controls">
+                            <div class="mobile-control-row">
+                                <button id="upButton" class="direction-btn"><i class="fas fa-arrow-up"></i></button>
+                            </div>
+                            <div class="mobile-control-row">
+                                <button id="leftButton" class="direction-btn"><i class="fas fa-arrow-left"></i></button>
+                                <button id="downButton" class="direction-btn"><i class="fas fa-arrow-down"></i></button>
+                                <button id="rightButton" class="direction-btn"><i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-instructions">
+            <div class="container">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Use arrow keys or WASD to control the snake</li>
+                    <li>Eat food to grow longer and increase your score</li>
+                    <li>Avoid hitting walls and your own body</li>
+                    <li>Try different game modes for varied challenges:
+                        <ul>
+                            <li><span class="mode-classic">Classic</span> - Standard snake game with walls</li>
+                            <li><span class="mode-nowalls">No Walls</span> - Snake wraps around the edges</li>
+                            <li><span class="mode-obstacles">Obstacles</span> - Avoid additional obstacles</li>
+                            <li><span class="mode-portal">Portal</span> - Teleport through portals</li>
+                        </ul>
+                    </li>
+                    <li>Mobile users can use the on-screen controls</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>GameZo</h2>
+                    <p>The ultimate online gaming platform</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="{{ url_for('index') }}">Home</a>
+                    <a href="{{ url_for('about') }}">About Us</a>
+                    <a href="{{ url_for('contact') }}">Contact Us</a>
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 GameZo. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/snake.js') }}"></script>
+</body>
+</html>
