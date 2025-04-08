@@ -55,7 +55,7 @@ GameZo Clone is a modern, premium clone of [GameZo.online](https://gamezo.online
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/GameZone.git
+   git clone https://github.com/SohamMedley/GameZone.git
    cd gamezo-clone
    ```
 
